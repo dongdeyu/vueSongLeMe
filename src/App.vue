@@ -38,6 +38,7 @@
 </template>
 
 <script>
+//组件
 import mTabbar from "./components/tabBar/tabbar";
 import mTabbarItem from "./components/tabBar/tabbar-item";
 export default {

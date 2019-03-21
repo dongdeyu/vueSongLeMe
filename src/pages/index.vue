@@ -1,7 +1,14 @@
 <template>
   <div>
-    <m-title name="呵呵"></m-title>
-    <m-title name="222"></m-title>
+    <navHeaderSlier
+      :scrollCenterText="headerStr"
+      :minFontSize="minValue"
+      :maxFontSize="maxValue"
+      :maxHeight="maxHeight"
+      :fixedCenterText="headerTitle"
+      :maxWidth="windowWidth"
+      class="title"
+    ></navHeaderSlier>
     <div class="page-cont">
       <div @click="showToast">123</div>
       <mt-cell title="开关状态">
@@ -20,7 +27,7 @@
 </template>
 
 <script>
-import header from "../components/header/header";
+import navHeaderSlier from "../components/header/nav_header_slider";
 import {
   Toast,
   MessageBox,
@@ -33,7 +40,7 @@ import {
 export default {
   name: "index",
   components: {
-    "m-title": header
+    navHeaderSlier
   },
   data() {
     return {
@@ -42,13 +49,26 @@ export default {
       title: "首页",
       value: "",
       selected: "1",
-      openValue: true
+      openValue: true,
+      minValue: 17,
+      maxValue: 25,
+      id: this.$route.query.id,
+      title: "",
+      content: "",
+      headerStr: "",
+      name: "",
+      timer: "",
+      maxHeight: 50,
+      headerTitle: "公告详情",
+      noInfoPage: false,
+      windowWidth: document.body.clientWidth,
+      messsge: false
     };
   },
 
   created() {
     // this.fetchData();
-    this.common.login("2123");
+    // this.common.login("2123");
     this.fn();
   },
   methods: {
@@ -60,11 +80,11 @@ export default {
       var fn1 = this.fn1;
       var fn2 = this.fn2;
       var fn3 = this.fn3;
-      (async function seq(fn1,fn2,fn3) {
+      (async function seq(fn1, fn2, fn3) {
         await fn1();
         await fn2();
         await fn3();
-      })(fn1, fn2,fn3);
+      })(fn1, fn2, fn3);
     },
     fn1: function() {
       return new Promise(function(resolve, reject) {

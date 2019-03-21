@@ -1,6 +1,7 @@
 <template>
   <div>
     <m-title name="呵呵"></m-title>
+    <m-title name="222"></m-title>
     <div class="page-cont">
       <div @click="showToast">123</div>
       <mt-cell title="开关状态">

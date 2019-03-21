@@ -9,6 +9,7 @@
       :maxWidth="windowWidth"
       class="title"
     ></navHeaderSlier>
+    <div>1231</div>
     <div class="page-cont">
       <div @click="showToast">123</div>
       <mt-cell title="开关状态">

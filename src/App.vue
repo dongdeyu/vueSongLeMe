@@ -6,10 +6,12 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link href="https://asks.oss-cn-beijing.aliyuncs.com/static/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://asks.oss-cn-beijing.aliyuncs.com/static/css/important.css" rel="stylesheet" type="text/css" />
+    
   </head>
   <body>
     <div id="app">
-      
       <router-view></router-view>
       <m-tabbar v-model="select">
         <m-tabbar-item id="Index" isRouter>
@@ -35,7 +37,9 @@
       </m-tabbar>
     </div>
   </body>
+  
 </html>
+
 </template>
 
 <script>
@@ -46,7 +50,7 @@ export default {
   name: "app",
   components: {
     mTabbar,
-    mTabbarItem
+    mTabbarItem,
   },
   data() {
     return {

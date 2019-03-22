@@ -95,19 +95,19 @@ export default {
     const beginHeight = 100 - 44 - 44;
     let lastScroll = 0;
     let offsetTop;
+    console.log(heightCha)
     window.onscroll = function(e) {
       let scrollTop = _this.common.getScrollTop(); // 滚动距离
       if (document.querySelector("#centerText") != null) {
         offsetTop = document.querySelector("#centerText").offsetTop; // 文字距顶尺寸
       }
       let opacityJiaBiLv = 1 / 44;
+      console.log(scrollTop);
+      console.log(heightCha );
       // 变化函数
-      if (
-        scrollTop >= lastScroll &&
-        scrollTop >= beginHeight &&
-        scrollTop <= heightCha
-      ) {
+      if (scrollTop >= lastScroll && scrollTop >= 0 && scrollTop <= heightCha) {
         // 向上滚动
+
         _this.showOpacity = 0 + (scrollTop - beginHeight) * opacityJiaBiLv;
       }
       if (

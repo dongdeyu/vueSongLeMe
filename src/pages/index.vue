@@ -9,18 +9,14 @@
       :maxWidth="windowWidth"
       class="title"
     ></navHeaderSlier>
-    <div>1231</div>
+
     <div class="page-cont">
       <div @click="showToast">123</div>
       <mt-cell title="开关状态">
         <mt-switch v-model="openValue"></mt-switch>
       </mt-cell>
       <mt-search v-model="value" cancel-text="取消" placeholder="搜索"></mt-search>
-      <mt-navbar v-model="selected">
-        <mt-tab-item id="1">选项一</mt-tab-item>
-        <mt-tab-item id="2">选项二</mt-tab-item>
-        <mt-tab-item id="3">选项三</mt-tab-item>
-      </mt-navbar>
+     
 
       <!-- tab-container -->
     </div>
@@ -59,7 +55,7 @@ export default {
       headerStr: "",
       name: "",
       timer: "",
-      maxHeight: 50,
+      maxHeight: 100,
       headerTitle: "公告详情",
       noInfoPage: false,
       windowWidth: document.body.clientWidth,

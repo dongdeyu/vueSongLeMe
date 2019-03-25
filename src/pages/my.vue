@@ -1,6 +1,7 @@
 <template>
   <div>
      <m-title name="个人中心"></m-title>
+     <div>12123</div>
   </div>
 </template>
 

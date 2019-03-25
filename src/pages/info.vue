@@ -1,6 +1,7 @@
 <template>
     <div>
        <m-title name="详情页"></m-title>
+       <div>132</div>
     </div>
 </template>
 

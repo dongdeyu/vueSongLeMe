@@ -10,6 +10,7 @@
       class="title"
     ></navHeaderSlier>
     <div>121131</div>
+    <div>我是第二個啊</div>
     <div class="page-cont">
       <div @click="showToast">123</div>
       <mt-cell title="开关状态">

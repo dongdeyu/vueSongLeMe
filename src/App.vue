@@ -6,14 +6,21 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link href="https://asks.oss-cn-beijing.aliyuncs.com/static/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="https://asks.oss-cn-beijing.aliyuncs.com/static/css/important.css" rel="stylesheet" type="text/css" />
-    
+    <link
+      href="https://asks.oss-cn-beijing.aliyuncs.com/static/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+    >
+    <link
+      href="https://asks.oss-cn-beijing.aliyuncs.com/static/css/important.css"
+      rel="stylesheet"
+      type="text/css"
+    >
   </head>
   <body>
     <div id="app">
       <router-view></router-view>
-      <m-tabbar v-model="select">
+      <m-tabbar v-model="select" v-if="showBottom" ref="bottom">
         <m-tabbar-item id="Index" isRouter>
           <img src="./assets/images/ic_tab_home_normal.png" alt slot="icon-normal">
           <img src="./assets/images/ic_tab_home_active.png" alt slot="icon-active">
@@ -37,9 +44,7 @@
       </m-tabbar>
     </div>
   </body>
-  
 </html>
-
 </template>
 
 <script>
@@ -50,15 +55,53 @@ export default {
   name: "app",
   components: {
     mTabbar,
-    mTabbarItem,
+    mTabbarItem
   },
   data() {
     return {
-      select: "Index"
+      select: "Index",
+      showBottom: true
     };
+  },
+  created() {
+    this.isLogin();
+    console.log(23)
+  },
+  mounted() {
+    console.log(123)
+  },
+  watch: {
+   "window.location.hash":function (newVal,oldVal) {
+      console.log(newVal);
+      console.log(oldVal);
+   }
+  },
+  methods: {
+     isLogin() {
+      let passportId = localStorage.getItem("passportId");
+      let thisAddress = window.location.hash.slice(2);
+      var that = this;
+      if (thisAddress == "Login") {
+        if (
+          passportId !== "undefined" &&
+          passportId !== null &&
+          passportId !== "" &&
+          passportId !== undefined
+        ) {
+          that.showBottom = true;
+        } else {
+          that.showBottom = false;
+        }
+      }else{
+        console.log(132)
+      }
+    }
   }
 };
 </script>
 
 <style>
+.m-tabbar {
+  display: block;
+}
 </style>

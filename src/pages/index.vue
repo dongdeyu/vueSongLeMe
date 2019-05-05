@@ -9,16 +9,27 @@
       :maxWidth="windowWidth"
       class="title"
     ></navHeaderSlier>
-    <div>121131</div>
     <div class="page-cont">
-      <div @click="showToast">123</div>
-      <mt-cell title="开关状态">
+    
+      <!-- <mt-cell title="开关状态">
         <mt-switch v-model="openValue"></mt-switch>
       </mt-cell>
-      <mt-search v-model="value" cancel-text="取消" placeholder="搜索"></mt-search>
-     
+      <mt-search v-model="value" cancel-text="取消" placeholder="搜索"></mt-search> -->
+       
 
       <!-- tab-container -->
+      <div @click="showToast">
+         <p>111</p>
+         <p>111</p>
+         <p>111</p>
+         <p>111</p>
+         <p>111</p>
+         <p>111</p>
+         <p>111</p>
+         <p>111</p>
+         <p>111</p>
+         <p>111</p>
+       </div>
     </div>
   </div>
 </template>
@@ -67,6 +78,7 @@ export default {
     // this.fetchData();
     // this.common.login("2123");
     this.fn();
+   console.log(this);
   },
   methods: {
     showToast() {

@@ -1,7 +1,7 @@
 <template>
   <div>
      <m-title name="个人中心"></m-title>
-     <div>12123</div>
+     <div @click="goReturn" class="page-cont">退出</div>
   </div>
 </template>
 
@@ -12,6 +12,12 @@
     components: {
         "m-title":header
     },
+    methods:{
+      goReturn(){
+         window.localStorage.setItem('passportId',"");
+         this.$router.push("index");
+      }
+    }
   }
 </script>
 

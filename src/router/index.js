@@ -30,6 +30,12 @@ export default new Router({
       component: resolve => import('../pages/my.vue'),
     },
     {
+      path: '/login',
+      name: 'Login',
+      meta:"Login",
+      component: resolve => import('../pages/login.vue'),
+    },
+    {
       path: '*',
       redirect: '/index'
     },

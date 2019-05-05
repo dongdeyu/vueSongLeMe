@@ -10,7 +10,8 @@
       value() {
          return this.$route.meta
       }
-    }
+    },
+    
   }
 
 </script>

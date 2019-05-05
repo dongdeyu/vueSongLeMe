@@ -7,6 +7,7 @@ import router from './router'
 import Vuex from 'vuex'
 import store from './store'
 import Mint from 'mint-ui';
+import $ from 'jquery'
 import 'mint-ui/lib/style.css'
 import '../static/css/global.css' /*引入公共样式*/
 import common from "./commonFun/common"

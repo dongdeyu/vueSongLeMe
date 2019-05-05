@@ -32,7 +32,8 @@
         	isRouter:{
         		type:Boolean,
         		default:false
-        	}
+            }
+            
         },
         computed: {
            isActive(){
@@ -43,9 +44,22 @@
         },
         methods:{
         	goToRouter(){
-        		this.$parent.$emit('input',this.id)
+                this.$parent.$emit('input',this.id)
+                console.log(this.id);
+                let passportId = localStorage.getItem('passportId');
+                console.log(passportId)
         		if(this.isRouter){
-                    this.$router.push(this.id);
+                    if(this.id=="My"){
+                        if(passportId!=="undefined"&&passportId!==null && passportId!=="" && passportId!==undefined){
+                             this.$router.push(this.id);
+                        }else{
+                            this.showBottom = false;
+                            this.$router.push("Login");
+                        }
+                    }else{
+                        this.$router.push(this.id);
+                    }
+                    
         		}
         	}
         }

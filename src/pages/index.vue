@@ -15,6 +15,7 @@
       <mt-cell title="开关状态">
         <mt-switch v-model="openValue"></mt-switch>
       </mt-cell>
+      <div>112323231111</div>
       <mt-search v-model="value" cancel-text="取消" placeholder="搜索"></mt-search>
       <mt-navbar v-model="selected">
         <mt-tab-item id="1">选项一</mt-tab-item>

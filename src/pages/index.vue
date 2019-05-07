@@ -77,6 +77,7 @@ export default {
     fn() {
       var $this = this;
       var fn1 = this.fn1;
+      console.log(123123123);
       var fn2 = this.fn2;
       var fn3 = this.fn3;
       (async function seq(fn1, fn2, fn3) {

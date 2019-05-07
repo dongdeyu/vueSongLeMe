@@ -18,7 +18,7 @@
       </mt-cell>
       <div>112323231111</div>
       <mt-search v-model="value" cancel-text="取消" placeholder="搜索"></mt-search>
-     
+
 
       <!-- tab-container -->
     </div>
@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import navHeaderSlier from "../components/header/nav_header_slider";
+import navHeaderSlier from '../components/header/nav_header_slider'
 import {
   Toast,
   MessageBox,
@@ -35,9 +35,9 @@ import {
   Search,
   Navbar,
   TabItem
-} from "mint-ui";
+} from 'mint-ui';
 export default {
-  name: "index",
+  name: 'index',
   components: {
     navHeaderSlier
   },
@@ -45,72 +45,71 @@ export default {
     return {
       recommendData: [],
       hotData: [],
-      title: "首页",
-      value: "",
-      selected: "1",
+      title: '首页',
+      value: '',
+      selected: '1',
       openValue: true,
       minValue: 17,
       maxValue: 25,
       id: this.$route.query.id,
-      title: "",
-      content: "",
-      headerStr: "",
-      name: "",
-      timer: "",
+      title: '',
+      content: '',
+      headerStr: '',
+      name: '',
+      timer: '',
       maxHeight: 100,
-      headerTitle: "公告详情",
+      headerTitle: '公告详情',
       noInfoPage: false,
       windowWidth: document.body.clientWidth,
       messsge: false
-    };
+    }
   },
 
-  created() {
+  created () {
     // this.fetchData();
     // this.common.login("2123");
-    this.fn();
+    this.fn()
   },
   methods: {
     showToast() {
-      this.$toast("Hello world!");
+      this.$toast('Hello world!')
     },
     fn() {
-      var $this = this;
-      var fn1 = this.fn1;
-      console.log(123123123);
-      var fn2 = this.fn2;
-      var fn3 = this.fn3;
-      (async function seq(fn1, fn2, fn3) {
-        await fn1();
-        await fn2();
-        await fn3();
-      })(fn1, fn2, fn3);
+      const $this = this
+      const fn1 = this.fn1
+      console.log(123123123)
+      const fn2 = this.fn2
+      const fn3 = this.fn3(async function seq (fn1, fn2, fn3) {
+        await fn1()
+        await fn2()
+        await fn3()
+      })(fn1, fn2, fn3)
     },
-    fn1: function() {
-      return new Promise(function(resolve, reject) {
-        setTimeout(function() {
-          resolve();
-          console.log("fn1 is executed");
-        }, 1000);
-      });
+    fn1: function () {
+      return new Promise(function (resolve, reject) {
+        setTimeout(function () {
+          resolve()
+          console.log('fn1 is executed')
+        }, 1000)
+      })
     },
 
     fn2: function() {
-      return new Promise(function(resolve, reject) {
-        setTimeout(function() {
-          console.log("fn2 is executed");
-          resolve();
-        }, 1000);
-      });
+      return new Promise(function (resolve, reject) {
+        setTimeout(function () {
+          console.log('fn2 is executed')
+          resolve()
+        }, 1000)
+      })
     },
 
     fn3: function() {
       return new Promise(function(resolve, reject) {
-        setTimeout(function() {
-          console.log("fn3 is executed");
-          resolve();
-        }, 1000);
-      });
+        setTimeout(function () {
+          console.log('fn3 is executed')
+          resolve()
+        }, 1000)
+      })
     }
   }
 };

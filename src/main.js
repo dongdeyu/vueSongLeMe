@@ -10,6 +10,12 @@ import Mint from 'mint-ui';
 import 'mint-ui/lib/style.css'
 import '../static/css/global.css' /*引入公共样式*/
 import common from "./commonFun/common"
+import VueAMap from 'vue-amap'
+Vue.use(VueAMap);
+Vue.config.productionTip =false;
+VueAMap.initAMapApiLoader({
+    key:'cac4cf0ff8beac80761c79f16de56013'
+})
 Vue.prototype.common = common
 Vue.use(Vuex)
 Vue.use(Mint)

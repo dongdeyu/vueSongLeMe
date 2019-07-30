@@ -10,14 +10,6 @@
       class="title"
     ></navHeaderSlier>
     <div class="page-cont">
-    
-      <!-- <mt-cell title="开关状态">
-        <mt-switch v-model="openValue"></mt-switch>
-      </mt-cell>
-      <mt-search v-model="value" cancel-text="取消" placeholder="搜索"></mt-search> -->
-       
-
-      <!-- tab-container -->
       <div @click="showToast">
          <p>111</p>
          <p>111</p>

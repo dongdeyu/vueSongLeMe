@@ -26,6 +26,8 @@
 </template>
 
 <script>
+import BScroll from 'better-scroll'
+
 import navHeaderSlier from "../components/header/nav_header_slider";
 import {lazyAmapApiLoaderInstanse} from 'vue-amap';
 import {
@@ -53,13 +55,13 @@ export default {
       minValue: 17,
       maxValue: 25,
       id: this.$route.query.id,
-      title: "",
-      content: "",
-      headerStr: "",
-      name: "",
-      timer: "",
+      title: '',
+      content: '',
+      headerStr: '',
+      name: '',
+      timer: '',
       maxHeight: 100,
-      headerTitle: "公告详情",
+      headerTitle: '',
       noInfoPage: false,
       windowWidth: document.body.clientWidth,
       messsge: false
@@ -87,42 +89,58 @@ export default {
       const fn2 = this.fn2;
       const fn3 = this.fn3;
       (async function seq(fn1, fn2, fn3) {
-        await fn1();
-        await fn2();
-        await fn3();
-      })(fn1, fn2, fn3);
+        await fn1()
+        await fn2()
+        await fn3()
+      })(fn1, fn2, fn3)
     },
     fn1: function() {
       return new Promise(function(resolve, reject) {
         setTimeout(function() {
-          resolve();
-          console.log("fn1 is executed");
-        }, 1000);
-      });
+          resolve()
+          console.log("fn1 is executed")
+        }, 1000)
+      })
     },
 
     fn2: function() {
       return new Promise(function(resolve, reject) {
         setTimeout(function() {
           console.log("fn2 is executed");
-          resolve();
-        }, 1000);
-      });
+          resolve()
+        }, 1000)
+      })
     },
 
     fn3: function() {
       return new Promise(function(resolve, reject) {
         setTimeout(function() {
-          console.log("fn3 is executed");
-          resolve();
-        }, 1000);
-      });
+          console.log('fn3 is executed')
+          resolve()
+        }, 1000)
+      })
     }
-  }
+  },
+  mounted() {
+    let wrapper = document.querySelector('.out')
+    let scroll = new BScroll(wrapper)
+
+  },
 };
 </script>
 
 <style lang="less">
+.out {
+        height: 200px;
+        overflow: hidden;
+        border: 1px solid red;
+    }
+
+    .in {
+        height: 200%;
+        border: 1px solid black;
+    }
+
 header.m-header {
   padding: 0 0 0 10px;
 }
@@ -154,4 +172,5 @@ header.m-header {
 .recommend-wrap {
   padding-top: 12px;
 }
+
 </style>
